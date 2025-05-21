@@ -1,0 +1,17 @@
+[playlist]
+NumberOfEntries=15
+File1=https://radioislamindonesia.com/rodja.mp3
+File2=https://radioislamindonesia.com/rodja-bandung.mp3
+File3=https://radioislamindonesia.com/rodja-majalengka.mp3
+File4=https://radioislamindonesia.com/rodjatv.mp3
+File5=https://radioislamindonesia.com/tarbiyah.mp3
+File6=https://sunnah.radio.yufid.com/;stream.nsv
+File7=https://radioislamindonesia.com/shahabatmuslim.mp3
+File8=https://radioislamindonesia.com/mutiaraquran.mp3
+File9=https://bassfm.radio.yufid.com/;
+File10=https://streaming.radiomuslim.com/;stream/1
+File11=https://stream.zeno.fm/vc80vpssu98uv
+File12=https://radioislamindonesia.com/dcsfm.mp3
+File13=https://radioislamindonesia.com/radiomadinah.mp3
+File14=https://radioislamindonesia.com/radiohidayah.mp3
+File15=https://radioislamindonesia.com/radiomuadz.mp3

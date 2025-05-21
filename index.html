@@ -1,0 +1,208 @@
+<!doctype html>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Sunnah Indonesia</title>
+<!-- Tribute to Sony Sugema and one of his magnificent creation at that time, Digital Quran. -->
+<link rel="icon" href="data:image/x-icon;base64,AAABAAIAICAQAAEABADoAgAAJgAAABAQEAABAAQAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAApwAAAAAAAAAAAAAAAAAAAKdwAAAAAAAAAAAAAAAAAAqqdwAAAAAAAAAAAAAAAACqqqdwAAAAAAAAAAAAAAAKqqqqcAAAAAAAAAAAAAAACqqqqncAAAAAAAAAAAAAAKqqqqqncAAAAAAAAAAAAAqqqqqqqncAAAAAAAAAAACqqqqqqqqnAAAAAAAAAAAAqqqqqqqqp3AAAAAAAAAACqqqqqqqqqp3AAAAAAAAAKqqqqqqqqqqpwAAAAAAAACqqqqqqqqqqqdwAAAAAAAKqqqqqqqqqqqqdwAAAAAAqqqqqqqqqqqqqqdwAAAACqqqqqqqqqqqqqqqdwAAAKqqqqqqqqqqqqqqqqdwAAqqqqqqqqqqqqqqqqqqcAAKqqqqqqqqqqqqqqqqqncAqqqqqqqqqqqqqqqqqqqnAKqqqqqqqqqqqqqqqqqqpwCqqqqqqqqqqqqqqqqqqqcAqqqqqqqqqqqqqqqqqqqnAKqqqqqqqqqqqqqqqqqqoAAKqqqqqqqqeqqqqqqqqnAACqqqqqqqqgqqqqqqqqoAAACqqqqqqqAAqqqqqqqgAAAACqqqqqoAAAqqqqqqAAAAAAAKqqoAAAAACqqqAAAAAAAAAAAAAAAAAAAAAAAAAA////////f////n////4////8H///+A////AP///wB///4AP//8AB//+AAf//gAD//wAAf/4AAH/+AAA//AAAH/gAAA/wAAAH4AAAA8AAAAPAAAABgAAAAYAAAAGAAAABgAAAAYAAAAPAAAADwAEAB+ADgA/wB8Af/B/wf/////8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAHAAAAAAAAAKpwAAAAAAAKqqAAAAAAAAqqpwAAAAAAqqqqcAAAAAqqqqqnAAAACqqqqqcAAACqqqqqqnAACqqqqqqqpwCqqqqqqqqqcKqqqqqqqqpwqqqqqqqqqnCqqqqqqqqqAAqqqgCqqqAAAKqgAAqqAA//8AAP9/AAD+PwAA/D8AAPwfAAD4DwAA8AcAAPAHAADgAwAAwAEAAIAAAACAAAAAgAAAAIABAADBgwAA48cAAA==">
+<style>
+body {
+  background-color: #3a6ea5;
+  font-family: arial;
+  font-size: 15px
+}
+
+::selection {
+  background: none
+}
+
+#display-message {
+    display: none;
+    position: absolute;
+    width: 275px;
+    margin-top: -58px;
+    margin-left: -137px;
+    top: 40%;
+    left: 50%;
+    background: #fff;
+    text-align: center
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2
+}
+
+#app #loading .ellipsis-anim span {
+  opacity: 0;
+  -webkit-animation: ellipsis-dot 1s infinite;
+  animation: ellipsis-dot 1s infinite
+}
+
+#app #loading .ellipsis-anim span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s
+}
+
+#app #loading .ellipsis-anim span:nth-child(2) {
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s
+}
+
+#app #loading .ellipsis-anim span:nth-child(3) {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s
+}
+
+@-webkit-keyframes ellipsis-dot {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes ellipsis-dot {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+.loaded-icon {
+  left: 0px;
+  top: 0px;
+  width: 75px;
+  position: absolute;
+}
+
+.desktop-icon {
+  text-align: center;
+  cursor: pointer;
+  image-rendering: pixelated
+}
+
+.desktop-icon-title {
+  color: #fff;
+  font-family: "MS Sans Serif",Segoe UI,sans-serif;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+  margin-top: 5px;
+  width: 100%;
+  border: 1px dotted transparent;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word
+}
+
+.desktop-icon.selected .desktop-icon-title {
+  background-color: navy;
+  border-color: #fff
+}
+
+.desktop-icon.selected img {
+  filter: brightness(.35) sepia(100%) hue-rotate(148deg) saturate(10)
+}
+</style>
+</head>
+<body>
+<div id="display-message"></div>
+<div id="app">
+  <div id="loading" style="display: none">
+    Loading<span class="ellipsis-anim"><span>.</span><span>.</span><span>.</span></span>
+  </div>
+</div>
+<div id="demo-desktop">
+  <div id="desktop" style="position: absolute; top: 0px; left: 0px; right: 0px; margin-top: 30px; margin-left: 10px;">
+    <div id="webamp-icon" class="loaded-icon">
+      <div class="desktop-icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAGFBMVEUAAAAAAAC2trb/VQD////y8vL//7H/qgC61DvZAAAAAXRSTlMAQObYZgAAAAFiS0dEBI9o2VEAAAAHdElNRQfiAwcADiWYqKuJAAAA3klEQVQoz13RQY7DIAwFUHMDaJOw5ghVpGHdxRyASj4BUlmjSP3XH8BAJvUikcnLl+MQSSm5GRp1061/jF79unqNeRws/NKkNp8nYHbKRugJmF82XgCbj7+AgIj/INgvYCvQJzAoYHUTGNTKRncgPfBwAgLwfidgz2XcCgKO/Qc4kNm1hCKQcPhyUL+oCnwAD6wsJBiTsAOGuYfwVgLKCw00kmrAKqCS7ZAA7qOa5FtAB0TbLgEDqIgWcAIJvIC6kQnuHqYttQOydZXLCchmGXcAsu3JMkH/4epJXzXAHxFEV862nV0ZAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAzLTA3VDAwOjE0OjM3LTA1OjAw/19S6wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMy0wN1QwMDoxNDozNy0wNTowMI4C6lcAAAAASUVORK5CYII=" style="width: 32px; height: 32px;">
+          <div class="desktop-icon-title">Webamp</div>
+      </div>
+    </div>
+    <div id="project-icon" class="loaded-icon" style="left: 75px">
+      <a href="https://github.com/fathonix/radio-sunnah-indonesia" target="_blank" rel="noopener noreferrer" class="desktop-icon" style="display: block; text-decoration: none;">
+        <div class="desktop-icon">
+          <img src="data:image/x-icon;base64,AAABAAIAICAQAAEABADoAgAAJgAAABAQEAABAAQAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAApwAAAAAAAAAAAAAAAAAAAKdwAAAAAAAAAAAAAAAAAAqqdwAAAAAAAAAAAAAAAACqqqdwAAAAAAAAAAAAAAAKqqqqcAAAAAAAAAAAAAAACqqqqncAAAAAAAAAAAAAAKqqqqqncAAAAAAAAAAAAAqqqqqqqncAAAAAAAAAAACqqqqqqqqnAAAAAAAAAAAAqqqqqqqqp3AAAAAAAAAACqqqqqqqqqp3AAAAAAAAAKqqqqqqqqqqpwAAAAAAAACqqqqqqqqqqqdwAAAAAAAKqqqqqqqqqqqqdwAAAAAAqqqqqqqqqqqqqqdwAAAACqqqqqqqqqqqqqqqdwAAAKqqqqqqqqqqqqqqqqdwAAqqqqqqqqqqqqqqqqqqcAAKqqqqqqqqqqqqqqqqqncAqqqqqqqqqqqqqqqqqqqnAKqqqqqqqqqqqqqqqqqqpwCqqqqqqqqqqqqqqqqqqqcAqqqqqqqqqqqqqqqqqqqnAKqqqqqqqqqqqqqqqqqqoAAKqqqqqqqqeqqqqqqqqnAACqqqqqqqqgqqqqqqqqoAAACqqqqqqqAAqqqqqqqgAAAACqqqqqoAAAqqqqqqAAAAAAAKqqoAAAAACqqqAAAAAAAAAAAAAAAAAAAAAAAAAA////////f////n////4////8H///+A////AP///wB///4AP//8AB//+AAf//gAD//wAAf/4AAH/+AAA//AAAH/gAAA/wAAAH4AAAA8AAAAPAAAABgAAAAYAAAAGAAAABgAAAAYAAAAPAAAADwAEAB+ADgA/wB8Af/B/wf/////8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAHAAAAAAAAAKpwAAAAAAAKqqAAAAAAAAqqpwAAAAAAqqqqcAAAAAqqqqqnAAAACqqqqqcAAACqqqqqqnAACqqqqqqqpwCqqqqqqqqqcKqqqqqqqqpwqqqqqqqqqnCqqqqqqqqqAAqqqgCqqqAAAKqgAAqqAA//8AAP9/AAD+PwAA/D8AAPwfAAD4DwAA8AcAAPAHAADgAwAAwAEAAIAAAACAAAAAgAAAAIABAADBgwAA48cAAA==" style="width: 32px; height: 32px;">
+          <div class="desktop-icon-title">Project Site</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/webamp@1.5.0/built/webamp.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/m3u-parser-generator@5.0.1/dist/m3u-parser-generator.iife.js"></script>
+<script>
+(function() {
+  const displayMessage = function(msg) {
+    document.getElementById("display-message").innerHTML = msg;
+    document.getElementById("display-message").style.display = "block";
+    document.getElementById("app").style.visibility = "hidden";
+  };
+  if (!window.Webamp.browserIsSupported()) {
+    displayMessage(
+      "<p>Your browser does not support the features we need.</p>" +
+      "<p>Try using the most recent version of Chrome, Firefox, Safari or Edge.</p>"
+    );
+    return;
+  }
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState != 4) return;
+    if (this.status != 200) {
+      displayMessage(
+        "<p>Failed to retrieve the radio playlist.</p>" +
+        "<p>Please try again later.</p>"
+      );
+      return;
+    }
+    const m3uParser = new m3uParserGenerator.M3uParser();
+    const playlist = m3uParser.parse(this.responseText).medias.map(e => {
+      return {metaData:{title: e.name},url: e.location};
+    });
+    const webamp = new window.Webamp({
+      initialTracks: playlist,
+      __initialWindowLayout:{
+        main:{position:{x:0,y:0}},
+        equalizer:{position:{x:0,y:116}},
+        playlist:{position:{x:0,y:232},size:[0,4]}
+      }
+    }).renderWhenReady(document.getElementById("app"));
+    const webampIcon = document.getElementById("webamp-icon");
+    webamp.onClose(() => {
+      webampIcon.addEventListener("click", () => {
+        webamp.reopen();
+      });
+    });
+  }
+  xhr.open("GET", "radio-sunnah-indonesia.m3u", true);
+  xhr.send();
+})();
+</script>
+<script>
+setTimeout(function () {
+  var loading = document.getElementById("loading");
+  if (loading != null) {
+    loading.style.display = "block";
+  }
+}, 500);
+</script>
+</body>
+</html>

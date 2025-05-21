@@ -1,0 +1,32 @@
+#EXTM3U
+#PLAYLIST:Radio Sunnah Indonesia
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Rodja 756 AM dan 100.1 FM
+https://radioislamindonesia.com/rodja.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Rodja Bandung 104.3 FM
+https://radioislamindonesia.com/rodja-bandung.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Rodja Majalengka 93.1 FM
+https://radioislamindonesia.com/rodja-majalengka.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Rodja TV - Satelit Telkom 4
+https://radioislamindonesia.com/rodjatv.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Tarbiyah Sunnah 1476 AM Bandung
+https://radioislamindonesia.com/tarbiyah.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Kita 94.3 FM Cirebon Indonesia
+https://sunnah.radio.yufid.com/;stream.nsv
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Shahabat Muslim 107.7 FM Tegal
+https://radioislamindonesia.com/shahabatmuslim.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Mutiara Qur’an 1170 AM Semarang
+https://radioislamindonesia.com/mutiaraquran.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Bass FM Salatiga
+https://bassfm.radio.yufid.com/;
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Muslim Yogyakarta
+https://streaming.radiomuslim.com/;stream/1
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Suara Al-Iman
+https://stream.zeno.fm/vc80vpssu98uv
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio DCS Madiun 100.50 FM
+https://radioislamindonesia.com/dcsfm.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Madinah 107.7 FM Madiun
+https://radioislamindonesia.com/radiomadinah.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Hidayah 103.4 FM Pekanbaru
+https://radioislamindonesia.com/radiohidayah.mp3
+#EXTINF:-1 group-title="Radio Sunnah Indonesia", Radio Muadz 94.3 FM Kendari
+https://radioislamindonesia.com/radiomuadz.mp3
