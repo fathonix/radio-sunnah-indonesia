@@ -184,7 +184,8 @@ body {
         equalizer:{position:{x:0,y:116}},
         playlist:{position:{x:0,y:232},size:[0,4]}
       }
-    }).renderWhenReady(document.getElementById("app"));
+    });
+    webamp.renderWhenReady(document.getElementById("app"));
     const webampIcon = document.getElementById("webamp-icon");
     webamp.onClose(() => {
       webampIcon.addEventListener("click", () => {
