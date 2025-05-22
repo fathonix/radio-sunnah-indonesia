@@ -197,6 +197,35 @@ body {
         webamp.reopen();
       });
     });
+    if ("mediaSession" in navigator) {
+      webamp.onTrackDidChange((track) => {
+        if (track == null) return;
+        const placeholder = "Radio Sunnah Indonesia";
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: track.metaData.title || placeholder,
+          artist: track.metaData.artist || placeholder
+        });
+        document.title = track.metaData.title || placeholder;
+      });
+      navigator.mediaSession.setActionHandler("play", () => {
+        webamp.play();
+      });
+      navigator.mediaSession.setActionHandler("pause", () => {
+        webamp.pause();
+      });
+      navigator.mediaSession.setActionHandler("seekbackward", () => {
+        webamp.seekBackward(10);
+      });
+      navigator.mediaSession.setActionHandler("seekforward", () => {
+        webamp.seekForward(10);
+      });
+      navigator.mediaSession.setActionHandler("previoustrack", () => {
+        webamp.previousTrack();
+      });
+      navigator.mediaSession.setActionHandler("nexttrack", () => {
+        webamp.nextTrack();
+      });
+    }
   }
   xhr.open("GET", "radio-sunnah-indonesia.m3u", true);
   xhr.send();
