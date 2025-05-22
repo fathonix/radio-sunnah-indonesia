@@ -205,7 +205,8 @@ body {
           title: track.metaData.title || placeholder,
           artist: track.metaData.artist || placeholder
         });
-        document.title = track.metaData.title || placeholder;
+        document.title = track.metaData.title +
+          " - " + placeholder || placeholder;
       });
       navigator.mediaSession.setActionHandler("play", () => {
         webamp.play();
