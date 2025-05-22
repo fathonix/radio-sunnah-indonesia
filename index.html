@@ -180,7 +180,7 @@ body {
     }
     const m3uParser = new m3uParserGenerator.M3uParser();
     const playlist = m3uParser.parse(this.responseText).medias.map(e => {
-      return {metaData:{title: e.name},url: e.location};
+      return {metaData:{title: e.name.trim()},url: e.location};
     });
     const webamp = new window.Webamp({
       initialTracks: playlist,
