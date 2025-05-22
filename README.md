@@ -17,5 +17,7 @@ Semua berkas disini bersifat Unlicense kecuali disebutkan tersendiri.
 
 Webamp dan m3u-parser-generator menggunakan lisensi MIT.
 
+Fon W95FA menggunakan lisensi SIL Open Font.
+
 Ikon hati hijau berasal dari program Digital Quran Versi 3.2.
 Hak cipta Sony Sugema rahimahullah 2003-2004.
