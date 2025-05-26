@@ -1,0 +1,124 @@
+@font-face {
+  font-family: Tahoma;
+  src: url(/assets/fonts/w95fa.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: Arial;
+  src: url(/assets/fonts/w95fa.woff2) format(woff2);
+}
+
+body {
+  background-color: #3a6ea5;
+  font-family: Tahoma;
+  font-size: 15px;
+}
+
+::selection {
+  background: none;
+}
+
+#display-message,
+#app #loading {
+  display: none;
+  position: absolute;
+  width: 275px;
+  margin-top: -58px;
+  margin-left: -137px;
+  top: 40%;
+  left: 50%;
+  background: #fff;
+  text-align: center;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+}
+
+#app #loading .ellipsis-anim span {
+  opacity: 0;
+  -webkit-animation: ellipsis-dot 1s infinite;
+  animation: ellipsis-dot 1s infinite;
+}
+
+#app #loading .ellipsis-anim span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+#app #loading .ellipsis-anim span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+#app #loading .ellipsis-anim span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes ellipsis-dot {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ellipsis-dot {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.loaded-icon {
+  left: 0px;
+  top: 0px;
+  width: 75px;
+  position: absolute;
+}
+
+.desktop-icon {
+  text-align: center;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.desktop-icon-title {
+  color: #fff;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+  margin-top: 5px;
+  width: 100%;
+  border: 1px dotted transparent;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.desktop-icon.selected .desktop-icon-title {
+  background-color: navy;
+  border-color: #fff;
+}
+
+.desktop-icon.selected img {
+  filter: brightness(0.35) sepia(100%) hue-rotate(148deg) saturate(10);
+}
