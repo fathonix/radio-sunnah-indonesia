@@ -16,7 +16,7 @@ class RadioSunnahApp {
   async fetchPlaylist() {
     try {
       const response = await fetch(
-        "/assets/playlists/radio-sunnah-indonesia.m3u"
+        "assets/playlists/radio-sunnah-indonesia.m3u"
       );
 
       if (!response.ok) {

@@ -1,11 +1,11 @@
 @font-face {
   font-family: Tahoma;
-  src: url(/assets/fonts/w95fa.woff2) format(woff2);
+  src: url(../fonts/w95fa.woff2) format(woff2);
 }
 
 @font-face {
   font-family: Arial;
-  src: url(/assets/fonts/w95fa.woff2) format(woff2);
+  src: url(../fonts/w95fa.woff2) format(woff2);
 }
 
 body {
