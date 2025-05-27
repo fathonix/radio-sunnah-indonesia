@@ -14,6 +14,10 @@ mendukung format M3U seperti Winamp lawas.
 
 ## Self-host menggunakan Docker
 
+Untuk menjalankan situs ini di komputer anda, pastikan anda sudah menginstal
+[Docker](https://docs.docker.com/engine/install). Kemudian klon proyek ini dan
+jalankan perintah berikut di terminal.
+
 ```bash
 # Build Docker image
 docker build -t radio-sunnah-indonesia .
@@ -21,6 +25,9 @@ docker build -t radio-sunnah-indonesia .
 # Jalankan container
 docker run -d -p 24434:80 --name radio-sunnah --restart always radio-sunnah-indonesia
 ```
+
+Jika berhasil, situs ini dapat diakses melalui pranala
+[http://127.0.0.1:24434](http://127.0.0.1:24434).
 
 # Lisensi
 
