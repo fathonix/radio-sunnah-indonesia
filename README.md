@@ -12,6 +12,16 @@ daftar putar [M3U](assets/playlists/radio-sunnah-indonesia.m3u) atau
 [PLS](assets/playlists/radio-sunnah-indonesia.pls) jika pemutar anda tidak
 mendukung format M3U seperti Winamp lawas.
 
+## Self-host menggunakan Docker
+
+```bash
+# Build Docker image
+docker build -t radio-sunnah-indonesia .
+
+# Jalankan container
+docker run -d -p 24434:80 --name radio-sunnah --restart always radio-sunnah-indonesia
+```
+
 # Lisensi
 
 Semua berkas disini bersifat Unlicense kecuali disebutkan tersendiri.
